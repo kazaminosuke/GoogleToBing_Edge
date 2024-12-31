@@ -1,21 +1,21 @@
-# GoogleToBing_Edge
 
-Toggles between Google and Bing in the Edge browser.
+## GoogleToBing_Edge
+EdgeブラウザでGoogleとBingを切り替える拡張機能です。
 
-Works with:
-* Search
-* Images
-* News
-* Videos
+対応内容:
 
----
+検索
+画像
+ニュース
+動画
 
-_Unoffical port of https://github.com/whyi/GoogleToBing which is an unofficial port of https://chrome.google.com/webstore/detail/google-to-bing/paognpekndknfamofcjkddficmghjcjo?utm_source=chrome-app-launcher-info-dialog which I do not believe exists on the Google store anymore._
+これは、GoogleToBing(https://github.com/whyi/GoogleToBing)の非公式フォーク(https://github.com/ambigoNate/GoogleToBing_Edge)の非公式フォーク(https://github.com/kazaminosuke/GoogleToBing_Edge)であり、さらにその原本はGoogle Chromeウェブストアの拡張機能(https://chrome.google.com/webstore/detail/google-to-bing/paognpekndknfamofcjkddficmghjcjo?utm_source=chrome-app-launcher-info-dialog)に基づいています。ただし、現在Googleストアでは入手できないと思われます。
 
+## 更新履歴:
+Google/Bingニュースへの対応を追加
+Google/Bing動画への対応を追加
+Manifestv3へ対応(チャットGPTによる編集)
 
-## Changelog:
-* Added support for Google/Bing news.
-* Added support for Google/Bing videos.
 
 
 
