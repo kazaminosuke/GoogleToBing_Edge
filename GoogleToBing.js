@@ -74,10 +74,10 @@ function start_script(){
 		site_name = data[0];
 		searchType = data[1];
 		if (site_name == "google"){
-			img_link = chrome.extension.getURL("icons/g2b.png");
+			img_link = chrome.runtime.getURL("icons/g2b.png");
 		}
 		else if (site_name=="bing"){
-			img_link = chrome.extension.getURL("icons/b2g.png");
+			img_link = chrome.runtime.getURL("icons/b2g.png");
 			destDomain = "google";
 		}
 		if(searchType == "web"){
@@ -121,10 +121,10 @@ function start_script(){
 
 function create_button(site_name, link){
 	if(site_name=="google"){
-		img_link = chrome.extension.getURL("icons/g2b.png");
+		img_link = chrome.runtime.getURL("icons/g2b.png");
 	}
 	else if (site_name=="bing"){
-		img_link = chrome.extension.getURL("icons/b2g.png");
+		img_link = chrome.runtime.getURL("icons/b2g.png");
 	}
 	var mydiv = document.createElement('div');
 	mydiv.setAttribute('style', 'background-image:url("'+img_link+'");'+ cssProp);
@@ -162,12 +162,16 @@ var linkDest = start_script();
 window.onresize = function(e){
 	if(document.getElementById("bingtogoogle")){
 		keys = ["bottom", "right"];
-        	chrome.storage.sync.get(keys, function(result){
-                	$("#clickme div").css("right",result.right);
-               		$("#clickme div").css("bottom",result.bottom);
-                        $("#clickme div").css("left", "auto");
-                        $("#clickme div").css("top", "auto");
-       		});
+		async function updateButtonPosition() {
+			const keys = ["bottom", "right"];
+			const result = await new Promise(resolve => {
+				chrome.storage.sync.get(keys, resolve);
+			});
+			$("#clickme div").css("right", result.right);
+			$("#clickme div").css("bottom", result.bottom);
+			$("#clickme div").css("left", "auto");
+			$("#clickme div").css("top", "auto");
+		}		
 	}
 }
 
